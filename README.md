@@ -1,27 +1,26 @@
 # Вопросы для собеседования на Java Developer
 
-+ [ООП](#ООП) ![icon][done]
-+ [Проектирование ПО](#Проектирование-ПО) ![icon][done]
-+ [JVM](#jvm) ![icon][done]
-+ [Java Core](#java-core) ![icon][done]
-+ [Java Collections Framework](#java-collections) ![icon][done]
-+ [Java 8](#java-8) ![icon][done]
-+ [Потоки ввода-вывода в Java](#Потоки-вводавывода-в-java) ![icon][done]
-+ [Сериализация](#Сериализация) ![icon][done]
-+ [Многопоточность](#Многопоточность) ![icon][done]
-+ [Servlets, JSP, JSTL](#servlets-jsp-jstl) ![icon][done]
-+ [Базы данных](#Базы-данных) ![icon][done]
-+ [SQL](#sql) ![icon][done]
-+ [JDBC](#jdbc) ![icon][done]
-+ [Тестирование](#Тестирование) ![icon][done]
-+ [Логирование](#Логирование) ![icon][done]
-+ [XML](#xml) ![icon][done]
-+ [Основы HTML](#Основы-html) ![icon][done]
-+ [Основы CSS](#Основы-css) ![icon][done]
-+ [Основы Web](#Основы-web) ![icon][done]
-+ [Дополнительные материалы](#Дополнительные-материалы) ![icon][done]
++ [ООП](#ООП) ✅
++ [Проектирование ПО](#Проектирование-ПО) ❌
++ [JVM](#jvm) ✅
++ [Java Core](#java-core) ✅
++ [Java Collections Framework](#java-collections) ✅
++ [Java 8](#java-8) ✅
++ [Потоки ввода-вывода в Java](#Потоки-вводавывода-в-java) ✅
++ [Сериализация](#Сериализация) ✅
++ [Многопоточность](#Многопоточность) ✅
++ [Servlets, JSP, JSTL](#servlets-jsp-jstl) ✅
++ [Базы данных](#Базы-данных) ✅
++ [SQL](#sql) ✅
++ [JDBC](#jdbc) ✅
++ [Тестирование](#Тестирование) ✅
++ [Логирование](#Логирование) ✅
++ [XML](#xml) ✅
++ [Основы HTML](#Основы-html) ✅
++ [Основы CSS](#Основы-css) ✅
++ [Основы Web](#Основы-web) ✅
++ [Дополнительные материалы](#Дополнительные-материалы) ✅
 
-[done]:done.png
 
 ## ООП
 + [Что такое _ООП_?](oop.md#Что-такое-ООП)
