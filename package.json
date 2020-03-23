@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "generate": "nodejs index.js",
-    "spell": "npx yaspeller -l ru README.md",
+    "spell": "npx yaspeller -l ru .",
     "test": "npm run spell",
     "check": "npm test",
     "start": "npm run generate && npm run check"
