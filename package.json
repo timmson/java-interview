@@ -5,9 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "spell": "npx yaspeller -l ru,en .",
+    "generate": "nodejs index.js",
+    "spell": "npx yaspeller -l ru README.md",
     "test": "npm run spell",
-    "check": "npm test"
+    "check": "npm test",
+    "start": "npm run generate && npm run check"
   },
   "repository": {
     "type": "git",

@@ -530,7 +530,7 @@ public class ExampleServlet extends HttpServlet {
 + `ServletOutputStream getOutputStream()`/`PrintWriter getWriter()` - возвращают потоки вывода данных;
 + `void setContentLength(int len)` - устанавливает значение поля HTTP заголовка _Content-Length_;
 + `void setContentType(String type)` - устанавливает значение поля HTTP заголовка _Content-Type_.
-+ `void reset()` - позволяет сбрасить HTTP заголовок к значениям по-умолчанию, если он ещё не был отправлен
++ `void reset()` - позволяет сбрасить HTTP заголовок к значениям по умолчанию, если он ещё не был отправлен
 + и др.
 
 [к оглавлению](#servlets-jsp-jstl)
