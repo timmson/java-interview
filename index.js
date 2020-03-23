@@ -51,7 +51,7 @@ readMeContents.push("# Вопросы для собеседования на Jav
 readMeContents.push("");
 
 mdFilesContents.forEach(mdFileContent => {
-    readMeContents.push(mapHeaderToLink(mdFileContent.articleName) +  " ✅");
+    readMeContents.push(mapHeaderToLink(mdFileContent.articleName));
 
 });
 
