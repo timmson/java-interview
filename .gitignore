@@ -1,10 +1,4 @@
 # IntelliJ
 *.iml
-out/
 .idea/
-
-# System specific
-.DS_Store
-
-# Maven
-target/
+node_modules/
