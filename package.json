@@ -1,0 +1,25 @@
+{
+  "name": "java-interview",
+  "version": "1.0.0",
+  "description": "Q & A for Java Developer Interview",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "spell": "npx yaspeller -l ru,en .",
+    "test": "npm run spell",
+    "check": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timmson/java-interview.git"
+  },
+  "author": "Krotov Artem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timmson/java-interview/issues"
+  },
+  "homepage": "https://github.com/timmson/java-interview#readme",
+  "devDependencies": {
+    "yaspeller": "6.0.3"
+  }
+}
