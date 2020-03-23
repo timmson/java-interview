@@ -16,7 +16,7 @@ function getFileContent(fileName) {
 }
 
 function getHeaders(data, headerSign) {
-    return data.split(/\r?\n/).filter(s => s.indexOf(headerSign) >= 0);
+    return data.split(/\r?\n/).filter(s => s.indexOf(headerSign) === 0);
 }
 
 function getArticleName(data) {
