@@ -42,7 +42,7 @@ const mdFilesContents = getFilteredFiles(files)
                 questions: getQuestions(fileContent)
             }
         }
-    )/*.sort((f1,f2) => f1.fileName.localeCompare(f1.fileName))*/;
+    );
 
 
 let readMeContents = [];
