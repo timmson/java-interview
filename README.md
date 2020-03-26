@@ -777,5 +777,6 @@
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
 
 ## Основы Javascript
++ [Что такое Javascript?](053-javascript.md#Что-такое-Javascript)
 
 [к оглавлению](#Вопросы-для-собеседования-на-java-developer)
