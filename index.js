@@ -1,22 +1,29 @@
 const fs = require("./lib/fs");
 const pr = require("./lib/parser");
+const colors = require("colors");
 
 const EOL = "\r\n";
 const rootFileName = "README.md";
 
-const mdFilesContents = fs.getListOfMDFiles(__dirname).slice(0, 1)
+const mdFilesContents = fs.getListOfMDFiles(__dirname)
     .map(mdFile => {
             let fileContent = fs.readFileContent(mdFile);
+            let articleName = pr.getArticleName(fileContent);
+            let questions = pr.getQuestions(fileContent);
+
+            fs.writeFileContent(
+                mdFile,
+                pr.replaceTableOfContent(fileContent, questions.map(q => pr.mapHeaderToLink(q))).join(EOL)
+            ).then(r => console.log("✓".green + " File " + mdFile + " was generated")).catch(e => console.error(e));
 
             return {
                 fileName: mdFile,
-                articleName: pr.getArticleName(fileContent),
-                questions: pr.getQuestions(fileContent)
+                articleName: articleName,
+                questions: questions
             }
         }
     );
 
-/*
 let readMeContents = [];
 readMeContents.push("# Вопросы для собеседования на Java Developer");
 
@@ -36,7 +43,4 @@ mdFilesContents.forEach(mdFileContent => {
     readMeContents.push("");
 });
 
-fs.writeFileContent(rootFileName, readMeContents.join(EOL));
-
-console.log("✓ File " + rootFileName + " was generated");
-*/
+fs.writeFileContent(rootFileName, readMeContents.join(EOL)).then(r => console.log("✓".green + " File " + rootFileName + " was generated")).catch(e => console.error(e));

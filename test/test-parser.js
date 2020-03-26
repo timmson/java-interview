@@ -14,7 +14,7 @@ describe("Parser should", () => {
 
 
     it("return Article Name", () => {
-        const arrange = ['# Main Header', '## Header 1 ', '## Header 2 ', '## Header 3'];
+        const arrange = ["# Main Header", "## Header 1 ", "## Header 2 ", "## Header 3"];
 
         const result = parser.getArticleName(arrange);
 
@@ -22,12 +22,22 @@ describe("Parser should", () => {
     });
 
     it("return Questions", () => {
-        const arrange = ['# Main Header', '## Header 1 ', '## Header 2 ', '## Header 3'];
+        const arrange = ["# Main Header", "## Header 1 ", "## Header 2 ", "## Header 3"];
 
         const result = parser.getQuestions(arrange);
 
         expect(result).has.length(3);
     });
+
+    it("remove table of content", () => {
+        const arrange = ["", "", "# Main Header", "+ fffff ", "+ cccccc", ""];
+        const toc = ["+ (AAAA)[] ", "+ (BBBB)[]"];
+
+        const result = parser.replaceTableOfContent(arrange, toc);
+
+        expect(result).to.eql(["", "", "# Main Header", "+ (AAAA)[] ", "+ (BBBB)[]", ""]);
+    });
+
 
     it("return link when header given without file", () => {
         const arrange = "Какая основная разница между `String`, `StringBuffer`, `StringBuilder`?";

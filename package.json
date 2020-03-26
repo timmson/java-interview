@@ -26,5 +26,8 @@
     "mocha": "7.1.1",
     "nyc": "15.0.0",
     "yaspeller": "6.0.3"
+  },
+  "dependencies": {
+    "colors": "1.4.0"
   }
 }
