@@ -21,6 +21,6 @@ jobs:
       run: |
         npm i
         npm test
-        npm spell
+        npm run spell
       env:
         CI: true
