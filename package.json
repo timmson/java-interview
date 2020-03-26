@@ -5,11 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "test": "npx mocha",
+    "coverage": "npx nyc mocha && npx nyc report --reporter=text-lcov > coverage.lcov",
     "generate": "node index.js",
     "spell": "npx yaspeller -l ru ..",
-    "test": "npm run spell",
-    "check": "npm test",
-    "start": "npm run generate && npm run check"
+    "start": "npm run generate && npm run spell"
   },
   "repository": {
     "type": "git",

@@ -2,3 +2,4 @@
 *.iml
 .idea/
 node_modules/
+coverage.lcov

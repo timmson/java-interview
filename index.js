@@ -1,70 +1,42 @@
-const path = require("path");
-const fs = require("fs");
+const fs = require("./lib/fs");
+const pr = require("./lib/parser");
 
 const EOL = "\r\n";
-const extension = ".md";
-const header1 = "# ";
-const header2 = "## ";
+const rootFileName = "README.md";
 
-
-function getFilteredFiles(files) {
-    return files.filter(f => f.indexOf(extension) >= 0 && f.indexOf("README") < 0)
-}
-
-function getFileContent(fileName) {
-    return fs.readFileSync(fileName, "utf8");
-}
-
-function getHeaders(data, headerSign) {
-    return data.split(/\r?\n/).filter(s => s.indexOf(headerSign) === 0);
-}
-
-function getArticleName(data) {
-    return getHeaders(data, header1)[0].slice(header1.length);
-}
-
-function getQuestions(data) {
-    return getHeaders(data, header2).map(h => h.slice(header2.length));
-}
-
-function mapHeaderToLink(header, fileName) {
-    return "+ [" + header + "](" + (fileName !== undefined ? fileName : "") + "#" + header.replace(/[&\/\\#,+()$~%.'`":*?<>{}«»_]/g,"").split(" ").join("-") + ")";
-}
-
-const files = fs.readdirSync(path.join(__dirname, "./"));
-
-const mdFilesContents = getFilteredFiles(files)
+const mdFilesContents = fs.getListOfMDFiles(__dirname).slice(0, 1)
     .map(mdFile => {
-            let fileContent = getFileContent(mdFile);
+            let fileContent = fs.readFileContent(mdFile);
+
             return {
                 fileName: mdFile,
-                articleName: getArticleName(fileContent),
-                questions: getQuestions(fileContent)
+                articleName: pr.getArticleName(fileContent),
+                questions: pr.getQuestions(fileContent)
             }
         }
     );
 
-
+/*
 let readMeContents = [];
 readMeContents.push("# Вопросы для собеседования на Java Developer");
 
 readMeContents.push("");
 
-mdFilesContents.forEach(mdFileContent => {
-    readMeContents.push(mapHeaderToLink(mdFileContent.articleName));
-
-});
+mdFilesContents.forEach(mdFileContent => readMeContents.push(pr.mapHeaderToLink(mdFileContent.articleName)));
 
 readMeContents.push("");
 
 mdFilesContents.forEach(mdFileContent => {
     readMeContents.push("## " + mdFileContent.articleName);
-    mdFileContent.questions.forEach(q => {
-        readMeContents.push(mapHeaderToLink(q, mdFileContent.fileName));
-    });
+
+    mdFileContent.questions.forEach(q => readMeContents.push(pr.mapHeaderToLink(q, mdFileContent.fileName)));
     readMeContents.push("");
+
     readMeContents.push("[к оглавлению](#Вопросы-для-собеседования-на-java-developer)");
     readMeContents.push("");
 });
 
-fs.writeFileSync("README.md", readMeContents.join(EOL));
+fs.writeFileContent(rootFileName, readMeContents.join(EOL));
+
+console.log("✓ File " + rootFileName + " was generated");
+*/
