@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "generate": "nodejs index.js",
-    "spell": "npx yaspeller -l ru .",
+    "generate": "node index.js",
+    "spell": "npx yaspeller -l ru ..",
     "test": "npm run spell",
     "check": "npm test",
     "start": "npm run generate && npm run check"
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/timmson/java-interview#readme",
   "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "7.1.1",
+    "nyc": "15.0.0",
     "yaspeller": "6.0.3"
   }
 }
