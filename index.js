@@ -4,9 +4,17 @@ require("colors");
 
 const EOL = "\r\n";
 const rootFileName = "README.md";
+const dirName = __dirname;
 
-const mdFilesContents = fs.getListOfMDFiles(__dirname)
-    .map(mdFile => {
+console.log("Files generation:");
+
+function log(fileName, startTime) {
+    console.log("✓".green + " " + dirName + "/" + fileName + " " + ((new Date().getTime() - startTime) + " ms").magenta);
+}
+
+const mdFilesContents = fs.getListOfMDFiles(dirName)
+    .map((mdFile) => {
+            let startTime = new Date().getTime();
             let fileContent = fs.readFileContent(mdFile);
             let articleName = pr.getArticleName(fileContent);
             let questions = pr.getQuestions(fileContent);
@@ -14,7 +22,7 @@ const mdFilesContents = fs.getListOfMDFiles(__dirname)
             fs.writeFileContent(
                 mdFile,
                 pr.replaceTableOfContent(fileContent, questions.map(q => pr.mapHeaderToLink(q))).join(EOL)
-            ).then(() => console.log("✓".green + " File " + mdFile + " was generated")).catch(e => console.error(e));
+            ).then(() => log(mdFile, startTime)).catch(e => console.error(e));
 
             return {
                 fileName: mdFile,
@@ -33,7 +41,7 @@ mdFilesContents.forEach(mdFileContent => readMeContents.push(pr.mapHeaderToLink(
 
 readMeContents.push("");
 
-mdFilesContents.forEach(mdFileContent => {
+mdFilesContents.forEach((mdFileContent) => {
     readMeContents.push("## " + mdFileContent.articleName);
 
     mdFileContent.questions.forEach(q => readMeContents.push(pr.mapHeaderToLink(q, mdFileContent.fileName)));
@@ -43,4 +51,5 @@ mdFilesContents.forEach(mdFileContent => {
     readMeContents.push("");
 });
 
-fs.writeFileContent(rootFileName, readMeContents.join(EOL)).then(() => console.log("✓".green + " File " + rootFileName + " was generated")).catch(e => console.error(e));
+let startTime = new Date().getTime();
+fs.writeFileContent(rootFileName, readMeContents.join(EOL)).then(() => log(rootFileName, startTime)).catch(e => console.error(e));
