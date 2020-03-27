@@ -63,9 +63,10 @@
 ## JVM
 + [Чем различаются JRE, JVM и JDK?](003-jvm.md#Чем-различаются-JRE-JVM-и-JDK)
 + [За что отвечает _JVM_?](003-jvm.md#За-что-отвечает-JVM)
-+ [Classloader](003-jvm.md#Classloader)
-+ [Расскажите про Run-Time Data Area](003-jvm.md#Расскажите-про-Run-Time-Data-Area)
-+ [Frames](003-jvm.md#Frames)
++ [Расскажите о Classloader](003-jvm.md#Расскажите-о-Classloader)
++ [Раскажите о Java Memory Model](003-jvm.md#Раскажите-о-Java-Memory-Model)
++ [Расскажите о Run-Time Data Area](003-jvm.md#Расскажите-о-Run-Time-Data-Area)
++ [Расскажите о Frames](003-jvm.md#Расскажите-о-Frames)
 + [Execution Engine](003-jvm.md#Execution-Engine)
 + [Какие существуют Garbage Collectors?](003-jvm.md#Какие-существуют-Garbage-Collectors)
 
