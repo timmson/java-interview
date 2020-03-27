@@ -9,7 +9,7 @@ describe("Parser should", () => {
 
         const result = parser.splitIntoLines(arrange);
 
-        expect(result).has.length(4);
+        expect(result).to.have.lengthOf(4);
     });
 
 
@@ -26,7 +26,7 @@ describe("Parser should", () => {
 
         const result = parser.getQuestions(arrange);
 
-        expect(result).has.length(3);
+        expect(result).to.have.lengthOf(3);
     });
 
     it("remove table of content", () => {

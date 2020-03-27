@@ -1,6 +1,6 @@
 const fs = require("./lib/fs");
 const pr = require("./lib/parser");
-const colors = require("colors");
+require("colors");
 
 const EOL = "\r\n";
 const rootFileName = "README.md";
@@ -14,7 +14,7 @@ const mdFilesContents = fs.getListOfMDFiles(__dirname)
             fs.writeFileContent(
                 mdFile,
                 pr.replaceTableOfContent(fileContent, questions.map(q => pr.mapHeaderToLink(q))).join(EOL)
-            ).then(r => console.log("✓".green + " File " + mdFile + " was generated")).catch(e => console.error(e));
+            ).then(() => console.log("✓".green + " File " + mdFile + " was generated")).catch(e => console.error(e));
 
             return {
                 fileName: mdFile,
@@ -43,4 +43,4 @@ mdFilesContents.forEach(mdFileContent => {
     readMeContents.push("");
 });
 
-fs.writeFileContent(rootFileName, readMeContents.join(EOL)).then(r => console.log("✓".green + " File " + rootFileName + " was generated")).catch(e => console.error(e));
+fs.writeFileContent(rootFileName, readMeContents.join(EOL)).then(() => console.log("✓".green + " File " + rootFileName + " was generated")).catch(e => console.error(e));
