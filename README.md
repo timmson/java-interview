@@ -446,6 +446,7 @@
 + [Что значит _«усыпить»_ поток?](009-concurrency.md#Что-значит-усыпить-поток)
 + [Чем отличаются два интерфейса `Runnable` и `Callable`?](009-concurrency.md#Чем-отличаются-два-интерфейса-Runnable-и-Callable)
 + [Что такое `FutureTask`?](009-concurrency.md#Что-такое-FutureTask)
++ [Что такое `CompletableFuture`?](009-concurrency.md#Что-такое-CompletableFuture)
 + [В чем заключаются различия между `CyclicBarrier` и `CountDownLatch`?](009-concurrency.md#В-чем-заключаются-различия-между-CyclicBarrier-и-CountDownLatch)
 + [Что такое _race condition_?](009-concurrency.md#Что-такое-race-condition)
 + [Существует ли способ решения проблемы _race condition_?](009-concurrency.md#Существует-ли-способ-решения-проблемы-race-condition)
