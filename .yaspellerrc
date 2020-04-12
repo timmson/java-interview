@@ -5,6 +5,7 @@
     ".md"
   ],
   "excludeFiles": [
+    "examples",
     "node_modules",
     "README.md"
   ],
