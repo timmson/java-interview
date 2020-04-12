@@ -101,14 +101,14 @@ Spring контейнер может являться частью любого 
 
 + __Аннотация/JavaConfig__ — с указанием пакета для сканирования — `AnnotationConfigApplicationContext(“package.name”)` или  через аннотации с указанием класса (или массива классов) помеченного аннотацией `@Configuration` - `AnnotationConfigApplicationContext(JavaConfig.class)`. Внутри `AnnotationConfigApplicationContext`, то можно увидеть два поля.
 
-````java                                             
+````java
     private final AnnotatedBeanDefinitionReader reader;
 
     private final ClassPathBeanDefinitionScanner scanner;
-````                                                                                                                                                                                                                                      
+````
 
 `ClassPathBeanDefinitionScanner` сканирует указанный пакет на наличие классов помеченных аннотацией @Component (или любой другой аннотацией которая включает в себя `@Component`). Найденные классы разбираются и для них создаются BeanDefinition. Чтобы сканирование было запущено, в конфигурации должен быть указан пакет для сканирования. @ComponentScan({"package.name"}) или <context:component-scan base-package="package.name"/>
-                                                                                                                                                                                                                                          
+
 `AnnotatedBeanDefinitionReader` работает в несколько этапов. Первый этап — это регистрация всех `@Configuration` для дальнейшего разбора. Если в конфигурации используются Conditional, то будут зарегистрированы только те конфигурации, для которых Condition вернет true. Аннотация Conditional появилась в четвертой версии Spring. Она используется в случае, когда на момент поднятия контекста нужно решить, создавать бин/конфигурацию или нет. Причем решение принимает специальный класс, который обязан реализовать интерфейс Condition. Второй этап — это регистрация специального `BeanFactoryPostProcessor`, а именно `BeanDefinitionRegistryPostProcessor`, который при помощи класса `ConfigurationClassParser` разбирает JavaConfig и создает BeanDefinition.
 
 + __Groovy конфигурация__ — `GenericGroovyApplicationContext(“context.groovy”)`. Данная конфигурация очень похожа на конфигурацию через Xml, за исключением того, что в файле не XML, а Groovy. Чтением и анализом groovy конфигурации занимается класс GroovyBeanDefinitionReader.
@@ -124,10 +124,10 @@ Spring контейнер может являться частью любого 
 ## Что такое `BeanPostProcessor`?
 Интерфейс `BeanPostProcessor` позволяет вклиниться в процесс настройки ваших бинов до того, как они попадут в контейнер. Интерфейс несет в себе несколько методов.
 
-````java   
+````java
 public interface BeanPostProcessor {
     Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException;
-	
+
     Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException;
 }
 ````
@@ -207,7 +207,7 @@ public Object around(ProceedingJoinPoint joinPoint) throws Throwable{
 [к оглавлению](#Spring)
 
 ## Как вы решаете какой бин внедрить, если у вас несколько подходящих бинов. Расскажите о `@Primary` и `@Qualifier`?
-Если есть бин, который вы предпочитаете большую часть времени по сравнению с другими, то используйте `@Primary`, и используйте `@Qualifier` для нестандартных сценариев. 
+Если есть бин, который вы предпочитаете большую часть времени по сравнению с другими, то используйте `@Primary`, и используйте `@Qualifier` для нестандартных сценариев.
 
 Если все бины имеют одинаковый приоритет, мы всегда будем использовать `@Qualifier`
 
@@ -289,14 +289,14 @@ public class WelcomeController {
 ResponseEntity необходим, только если мы хотим кастомизировать ответ, добавив к нему статус ответа. Во всех остальных случаях будем использовать `@ResponseBody`.
 
 ````java
-@GetMapping(value=”/resource”) 
-@ResponseBody 
+@GetMapping(value=”/resource”)
+@ResponseBody
 public Resource sayHello() { return resource; }
 
-@PostMapping(value=”/resource”) 
-public ResponseEntity createResource() { 
+@PostMapping(value=”/resource”)
+public ResponseEntity createResource() {
     ….
-    return ResponseEntity.created(resource).build(); 
+    return ResponseEntity.created(resource).build();
 }
 ````
 Стандартные HTTP коды статусов ответов, которые можно использовать.
@@ -356,7 +356,7 @@ Hibernate Validator никак не связан с БД. Это просто б
 Да, можно принять все значения, используя массив в методе контроллера
 
 ````java
-public String method(@RequestParam(value="name") String[] names){   
+public String method(@RequestParam(value="name") String[] names){
 }
 ````
 
