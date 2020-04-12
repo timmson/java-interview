@@ -14,10 +14,10 @@ function log(fileName, startTime) {
 	console.log("✓".green + " " + dirName + "/" + fileName + " " + ((new Date().getTime() - startTime) + " ms").magenta);
 }
 
-function logError(fileName, startTime, reason) {
-	console.log("✗".red + " " + dirName + "/" + fileName + " " + ((new Date().getTime() - startTime) + " ms").magenta);
+function logError(errorResult) {
+	console.log("✗".red + " " + dirName + "/" + errorResult.fileName);
 	console.log("-----".red);
-	console.log(JSON.stringify(reason, null, 2).red);
+	console.log(JSON.stringify(errorResult.errors, null, 2).red);
 	console.log("-----".red);
 }
 
@@ -32,16 +32,27 @@ const mdFilesContents = fs.getListOfMDFiles(dirName)
 
 			}
 
-			promises.push(sp.check(fileSource));
+			promises.push(new Promise(async (resolve) => {
+				let errors = await sp.check(fileSource, mdFile);
+				resolve({fileName: mdFile, errors: errors});
+			}));
+
 
 			let fileContent = pr.splitIntoLines(fileSource);
 			let articleName = pr.getArticleName(fileContent);
 			let questions = pr.getQuestions(fileContent);
+			let newFileContnent = pr.replaceTableOfContent(fileContent, questions.map(q => pr.mapHeaderToLink(q))).join(EOL);
 
-			promises.push(fs.writeFileContent(
-				mdFile,
-				pr.replaceTableOfContent(fileContent, questions.map(q => pr.mapHeaderToLink(q))).join(EOL)
-			));
+			promises.push(new Promise(async (resolve) => {
+					let errors = [];
+					try {
+						await fs.writeFileContent(mdFile, newFileContnent);
+					} catch (e) {
+						errors.push(e);
+					}
+					resolve({fileName: mdFile, errors: errors});
+				})
+			);
 
 			log(mdFile, startTime);
 
@@ -53,12 +64,12 @@ const mdFilesContents = fs.getListOfMDFiles(dirName)
 		}
 	);
 
-Promise.all(promises).then(values => {
+Promise.all(promises).then(results => {
 
-	let err = values.filter(v => v && v.length > 0);
-	err.forEach(v => logError("", 0, v));
+	let errorResults = results.filter(er => er.errors && er.errors.length > 0);
 
-	if (err.length > 0) {
+	if (errorResults.length > 0) {
+		errorResults.forEach(v => logError(v));
 		process.exit(1);
 	}
 
