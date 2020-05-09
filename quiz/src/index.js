@@ -13,10 +13,7 @@ new Vue({
 		currentYear: new Date().getFullYear().toString(),
 		isAnswerOpen: false,
 		question: {
-			subject: {
-				url: "",
-				title: "",
-			},
+			subject: "",
 			url: "",
 			title: "",
 			answer: ""
