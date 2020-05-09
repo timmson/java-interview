@@ -2,8 +2,6 @@ const Speller = require("../lib/speller");
 const {expect} = require("chai");
 require("mocha");
 
-//const settings = JSON.parse(require("fs").readFileSync(__dirname + "/../.yaspellerrc", "utf8"));
-
 describe("Speller should", () => {
 	it("2 errors on given string", async () => {
 		const arrange = "Потомучта Сплитератором ее";

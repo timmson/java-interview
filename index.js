@@ -1,7 +1,8 @@
 const fs = require("./lib/fs");
-const logger = require("./lib/logger");
+const Logger = require("./lib/logger");
 const Transformer = require("./lib/transformer");
 
+const logger = new Logger();
 logger.info("File spellchecking and generation:");
 
 let transformer = new Transformer();
