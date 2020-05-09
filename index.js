@@ -17,6 +17,7 @@ Promise.all(mdFilesContents.reduce((accumulator, current) => accumulator.concat(
 	}
 
 	transformer.transformRootFile(__dirname + "/" + "README.md", mdFilesContents);
+	transformer.persistStructure(__dirname + "/" + "questions.js", mdFilesContents);
 
 });
 
