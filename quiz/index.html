@@ -24,13 +24,11 @@
         </div>
     </div>
     <div class="row mt-2">
-        <div class="col-sm-12 text-left border">
-            {{ question.title }}
+        <div class="col-sm-12 text-left border" v-html="question.title">
         </div>
     </div>
     <div class="row mt-2" v-if="isAnswerOpen">
-        <div class="col-sm-12 text-left border">
-            {{ question.answer }}
+        <div class="col-sm-12 text-left border" v-html="question.answer">
         </div>
     </div>
     <div class="row mt-2">
