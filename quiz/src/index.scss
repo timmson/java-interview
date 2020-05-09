@@ -9,6 +9,10 @@ html, body, .container {
   background: $background-color;
   font-family: "Lucida Console", monospace;
 
+  code {
+    color: $font-color;
+  }
+
   .copyright {
     font-size: 8pt;
   }
