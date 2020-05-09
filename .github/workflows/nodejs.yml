@@ -21,6 +21,6 @@ jobs:
       run: |
         npm i
         npm run coverage
-        npm start
+        npm run generate
       env:
         CI: true
