@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+$font-color: #d3d3d3;
+$background-color: #2b2b2b;
+
+html, body, .container {
+  color: $font-color;
+  background: $background-color;
+  font-family: "Lucida Console", monospace;
+
+  .copyright {
+    font-size: 8pt;
+  }
+}
+

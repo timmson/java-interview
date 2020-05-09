@@ -1,0 +1,41 @@
+{
+  "name": "java-interview-webview",
+  "version": "1.0.0",
+  "description": "Webview for java-interview",
+  "private": true,
+  "scripts": {
+    "dev": "npx webpack --mode development",
+    "watch": "npx webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timmson/java-interview.git"
+  },
+  "author": "timmnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timmson/java-interview/issues"
+  },
+  "dependencies": {
+    "axios": "0.19.2",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0",
+    "popper.js": "^1.16.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-es2016": "7.0.0-beta.53",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "8.1.0",
+    "babel-polyfill": "6.26.0",
+    "css-loader": "^3.5.3",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.0",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
