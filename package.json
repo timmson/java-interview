@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "colors": "1.4.0",
+    "showdown": "1.9.1",
     "yaspeller": "6.0.3"
   }
 }
