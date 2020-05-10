@@ -34,9 +34,21 @@ new Vue({
 		},
 		loadQuestion: function (event) {
 			this.isAnswerOpen = false;
-			this.question = question.getQuestion(this.defaultQuestion);
-			window.history.replaceState({}, "Вопросы для собеседования", "?" + QueryString.stringify({question: this.question.url}));
-			this.question.url = root + this.question.url;
+			let q = question.getQuestion(this.defaultQuestion) || {
+				url: "",
+				subject: "Такой темы еще нет:(",
+				title: "Такого вопроса еще нет:(",
+				answer: "Но ты можешь его добавить в <a href=\"https://github.com/timmson/java-interview\">github.com/timmson/java-interview</a>"
+			};
+
+			window.history.replaceState(
+				{},
+				"Вопросы для собеседования",
+				"?" + QueryString.stringify({question: q.url})
+			);
+
+			q.url = root + q.url;
+			this.question = q;
 			this.defaultQuestion = null;
 		}
 	},

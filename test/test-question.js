@@ -36,5 +36,10 @@ describe("Question should", () => {
 		expect(result).to.have.deep.equal(questions[1]);
 	});
 
+	it("return undefined by missing url", () => {
+		const result = question.getQuestion("some missing url");
+
+		expect(result).to.be.undefined;
+	});
 
 });

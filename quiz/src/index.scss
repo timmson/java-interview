@@ -2,6 +2,7 @@
 
 
 $font-color: #d3d3d3;
+$border-color: #939393;
 $background-color: #2b2b2b;
 
 html, body, .container {
@@ -12,6 +13,12 @@ html, body, .container {
   code {
     color: $font-color;
   }
+
+  table th, td {
+    border: 1px solid $border-color;
+    padding: 1px 1px 1px 1px;
+  }
+;
 
   .copyright {
     font-size: 8pt;
