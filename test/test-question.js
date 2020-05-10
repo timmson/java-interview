@@ -7,7 +7,7 @@ describe("Question should", () => {
 	const questions = [
 		{
 			subject: "ООП",
-			url: "../001-oop.html##что-такое-инкапсуляция",
+			url: "001-oop.html##что-такое-инкапсуляция",
 			question: "Что такое <i>«инкапсуляция»</i>?",
 			answer: "<b>Инкапсуляция<b> – это свойство системы, позволяющее объединить данные и методы, " +
 				"работающие с ними, в классе и скрыть детали реализации от пользователя, открыв только то, что " +
@@ -15,7 +15,7 @@ describe("Question should", () => {
 		},
 		{
 			subject: "ООП",
-			url: "../001-oop.html##что-такое-наследование",
+			url: "001-oop.html##что-такое-наследование",
 			question: "Что такое <i>«наследование»</i>?",
 			answer: "<b>Наследование<b> – это свойство системы, позволяющее описать новый класс на основе уже " +
 				"существующего с частично или полностью заимствующейся функциональностью."
@@ -24,10 +24,17 @@ describe("Question should", () => {
 
 	const question = new Question(questions);
 
-	it("returns random question", () => {
+	it("return random question", () => {
 		const result = question.getQuestion();
 
 		expect(result).is.not.undefined;
 	});
+
+	it("return question by url", () => {
+		const result = question.getQuestion("001-oop.html##что-такое-наследование");
+
+		expect(result).to.have.deep.equal(questions[1]);
+	});
+
 
 });

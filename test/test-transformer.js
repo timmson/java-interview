@@ -1,4 +1,5 @@
 const trueFs = require("fs");
+const Logger = require("../lib/logger");
 const Transformer = require("../lib/transformer");
 const {expect} = require("chai");
 require("mocha");
@@ -37,16 +38,24 @@ class MockPR {
 		return "";
 	}
 
+	mapHeaderAndAnchorToLink() {
+		return "";
+	}
+
+}
+
+function mockLog() {
+
 }
 
 describe("Transformer should", () => {
 
 	const fs = new MockFS();
 	const pr = new MockPR();
-	const transformer = new Transformer(fs, pr);
+	const transformer = new Transformer(fs, pr, new Logger(mockLog));
 
 	it("transform root file", () => {
-		transformer.transformRootFile("some file", [{questions: []}]);
+		transformer.transformRootFile("some file", [{fileName: "myfile", questions: [{}]}]);
 		expect(true).is.equal(true);
 	})
 
@@ -56,7 +65,7 @@ describe("Transformer should", () => {
 	})
 
 	it("persist structure", () => {
-		transformer.persistStructure("some file", []);
+		transformer.persistStructure("some file", [{fileName: "myfile", questions: [{}]}]);
 		expect(true).is.equal(true);
 	})
 
