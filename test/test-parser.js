@@ -38,13 +38,20 @@ describe("Parser should", () => {
 		expect(result).to.eql(["", "", "# Main Header", "+ (AAAA)[] ", "+ (BBBB)[]", ""]);
 	});
 
-
 	it("return link when header given without file", () => {
-		const arrange = "Какая основная разница между `String`, `StringBuffer`, `StringBuilder`?";
+		const arrange = "Что будет результатом выполнения операции `int[] array = {8, --3, 10, 4}; int result = Arrays.binarySearch(array, 8);`?";
 
 		const result = parser.mapHeaderToLink(arrange);
 
-		expect(result).is.equal("+ [Какая основная разница между `String`, `StringBuffer`, `StringBuilder`?](#какая-основная-разница-между-string-stringbuffer-stringbuilder)")
+		expect(result).is.equal("+ [" + arrange + "](#что-будет-результатом-выполнения-операции-int-array-8-3-10-4-int-result-arraysbinarysearcharray-8)")
+	});
+
+	it("return link when header given without file 2", () => {
+		const arrange = "Чем отличается `<c:import>` от `<jsp:include>` и директивы `<%@include %>`?";
+
+		const result = parser.mapHeaderToLink(arrange);
+
+		expect(result).is.equal("+ [" + arrange + "](#чем-отличается-cimport-от-jspinclude-и-директивы-include-)")
 	});
 
 	it("return link when header given with file", () => {
@@ -52,7 +59,7 @@ describe("Parser should", () => {
 
 		const result = parser.mapHeaderToLink(arrange, "004-core.md");
 
-		expect(result).is.equal("+ [Какая основная разница между `String`, `StringBuffer`, `StringBuilder`?](004-core.md#какая-основная-разница-между-string-stringbuffer-stringbuilder)")
+		expect(result).is.equal("+ [" + arrange + "](004-core.md#какая-основная-разница-между-string-stringbuffer-stringbuilder)")
 	});
 
 
