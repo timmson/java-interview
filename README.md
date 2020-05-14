@@ -73,11 +73,12 @@
 + [Что такое Domain-driven design?](002-sd.md#что-такое-domain-driven-design)
 + [Расскажите про Event-driven Architecure](002-sd.md#расскажите-про-event-driven-architecure)
 + [Расскажите про Service-oriented Architecure (SOA)?](002-sd.md#расскажите-про-service-oriented-architecure-soa)
++ [Что такое _микросервисы_?](002-sd.md#что-такое-микросервисы)
 + [Расскажите про Enterprise Integration Patterns (EIP)?](002-sd.md#расскажите-про-enterprise-integration-patterns-eip)
 + [Расскажите про Patterns of Enterprise Applications Architecture (PoEAA)?](002-sd.md#расскажите-про-patterns-of-enterprise-applications-architecture-poeaa)
 + [Расскажите про CQRS и Event Sourcing?](002-sd.md#расскажите-про-cqrs-и-event-sourcing)
++ [Расскажите про Event Sourcing?](002-sd.md#расскажите-про-event-sourcing)
 + [В чем особенности проектирования распределённых систем?](002-sd.md#в-чем-особенности-проектирования-распределённых-систем)
-+ [Сравните  _«монолитную архитектуру»_ и _«микросервисную архитектуру»_](002-sd.md#сравните-монолитную-архитектуру-и-микросервисную-архитектуру)
 
 [к оглавлению](#вопросы-для-собеседования-на-разработчика-java)
 
