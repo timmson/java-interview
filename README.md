@@ -79,7 +79,8 @@
 + [Расскажите про Patterns of Enterprise Applications Architecture (PoEAA)?](002-sd.md#расскажите-про-patterns-of-enterprise-applications-architecture-poeaa)
 + [Расскажите про CQRS и Event Sourcing?](002-sd.md#расскажите-про-cqrs-и-event-sourcing)
 + [Расскажите про Event Sourcing?](002-sd.md#расскажите-про-event-sourcing)
-+ [В чем особенности проектирования распределённых систем?](002-sd.md#в-чем-особенности-проектирования-распределённых-систем)
++ [Что такое ACID?](002-sd.md#что-такое-acid)
++ [В чем смысл CAP теоремы?](002-sd.md#в-чем-смысл-cap-теоремы)
 
 [к оглавлению](#вопросы-для-собеседования-на-разработчика-java)
 
