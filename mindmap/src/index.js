@@ -69,8 +69,8 @@ Vue.component("diagram", {
 new Vue({
 	el: "#app",
 	data: {
-		modelData: {},
-		hash: ""
+		currentYear: new Date().getFullYear().toString(),
+		modelData: {}
 	},
 	mounted() {
 
