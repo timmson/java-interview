@@ -4,7 +4,7 @@ import "./index.scss";
 import GoJs from "gojs";
 import Vue from "vue";
 
-import MindMap from "./mindmap";
+import MindMap from "../../lib/mindmap";
 import questions from "../../lib/questions";
 
 const mindMap = new MindMap(questions);

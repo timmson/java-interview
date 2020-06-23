@@ -1,8 +1,8 @@
 const {expect} = require("chai");
 require("mocha");
 
-const questions = require("../../lib/questions");
-const MindMap = require("../src/mindmap");
+const questions = require("../lib/questions");
+const MindMap = require("../lib/mindmap");
 
 describe("Map should", () => {
 
