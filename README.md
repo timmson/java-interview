@@ -230,8 +230,8 @@
 ## Java Collections Framework
 + [Что такое _«коллекция»_?](005-jcf.md#что-такое-коллекция)
 + [Назовите основные интерфейсы JCF и их реализации.](005-jcf.md#назовите-основные-интерфейсы-jcf-и-их-реализации)
-+ [Расположите в виде иерархии следующие интерфейсы: `List`, `Set`, `Map`, `SortedSet`, `SortedMap`, `Collection`, `Iterable`, `Iterator`, `NavigableSet`, `NavigableMap`.](005-jcf.md#расположите-в-виде-иерархии-следующие-интерфейсы-list-set-map-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap)
-+ [Почему `Map` — это не `Collection`, в то время как `List` и `Set` являются `Collection`?](005-jcf.md#почему-map-—-это-не-collection-в-то-время-как-list-и-set-являются-collection)
++ [Расположите в виде иерархии следующие интерфейсы: `List`, `Set`, `Mindmap`, `SortedSet`, `SortedMap`, `Collection`, `Iterable`, `Iterator`, `NavigableSet`, `NavigableMap`.](005-jcf.md#расположите-в-виде-иерархии-следующие-интерфейсы-list-set-mindmap-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap)
++ [Почему `Mindmap` — это не `Collection`, в то время как `List` и `Set` являются `Collection`?](005-jcf.md#почему-mindmap-—-это-не-collection-в-то-время-как-list-и-set-являются-collection)
 + [В чем разница между классами `java.util.Collection` и `java.util.Collections`?](005-jcf.md#в-чем-разница-между-классами-javautilcollection-и-javautilcollections)
 + [Что такое «fail-fast поведение»?](005-jcf.md#что-такое-fail-fast-поведение)
 + [Какая разница между fail-fast и fail-safe?](005-jcf.md#какая-разница-между-fail-fast-и-fail-safe)
@@ -295,9 +295,9 @@
 + [Как и когда происходит увеличение количества корзин в `HashMap`?](005-jcf.md#как-и-когда-происходит-увеличение-количества-корзин-в-hashmap)
 + [Объясните смысл параметров в конструкторе `HashMap(int initialCapacity, float loadFactor)`.](005-jcf.md#объясните-смысл-параметров-в-конструкторе-hashmapint-initialcapacity-float-loadfactor)
 + [Будет ли работать `HashMap`, если все добавляемые ключи будут иметь одинаковый `hashCode()`?](005-jcf.md#будет-ли-работать-hashmap-если-все-добавляемые-ключи-будут-иметь-одинаковый-hashcode)
-+ [Как перебрать все ключи `Map`?](005-jcf.md#как-перебрать-все-ключи-map)
-+ [Как перебрать все значения `Map`?](005-jcf.md#как-перебрать-все-значения-map)
-+ [Как перебрать все пары «ключ-значение» в `Map`?](005-jcf.md#как-перебрать-все-пары-ключ-значение-в-map)
++ [Как перебрать все ключи `Mindmap`?](005-jcf.md#как-перебрать-все-ключи-mindmap)
++ [Как перебрать все значения `Mindmap`?](005-jcf.md#как-перебрать-все-значения-mindmap)
++ [Как перебрать все пары «ключ-значение» в `Mindmap`?](005-jcf.md#как-перебрать-все-пары-ключ-значение-в-mindmap)
 + [В чем отличия `TreeSet` и `HashSet`?](005-jcf.md#в-чем-отличия-treeset-и-hashset)
 + [Что будет, если добавлять элементы в `TreeSet` по возрастанию?](005-jcf.md#что-будет-если-добавлять-элементы-в-treeset-по-возрастанию)
 + [Чем `LinkedHashSet` отличается от `HashSet`?](005-jcf.md#чем-linkedhashset-отличается-от-hashset)
@@ -314,7 +314,7 @@
 + [Как одной строчкой преобразовать `HashSet` в `ArrayList`?](005-jcf.md#как-одной-строчкой-преобразовать-hashset-в-arraylist)
 + [Как одной строчкой преобразовать `ArrayList` в `HashSet`?](005-jcf.md#как-одной-строчкой-преобразовать-arraylist-в-hashset)
 + [Сделайте `HashSet` из ключей `HashMap`.](005-jcf.md#сделайте-hashset-из-ключей-hashmap)
-+ [Сделайте `HashMap` из `HashSet<Map.Entry<K, V>>`.](005-jcf.md#сделайте-hashmap-из-hashsetmapentryk-v)
++ [Сделайте `HashMap` из `HashSet<Mindmap.Entry<K, V>>`.](005-jcf.md#сделайте-hashmap-из-hashsetmindmapentryk-v)
 
 [к оглавлению](#вопросы-для-собеседования-на-разработчика-java)
 

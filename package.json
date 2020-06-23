@@ -9,7 +9,7 @@
     "coverage": "npx nyc mocha && npx nyc report --reporter=text-lcov > coverage.lcov",
     "generate": "node index.js",
     "spell": "npx yaspeller -l ru ./",
-    "start": "npm run generate && cd ./quiz && npm run prod"
+    "start": "npm run generate && cd ./quiz && npm run prod && cd ./docs && npm run prod"
   },
   "repository": {
     "type": "git",

@@ -97,7 +97,7 @@ Spring контейнер может являться частью любого 
 [к оглавлению](#Spring)
 
 ## Какие способы конфигурирование Spring существуют?
-+ __XML конфигурация__ — `ClassPathXmlApplicationContext(“context.xml”)`. Используется класс — `XmlBeanDefinitionReader`, который реализует интерфейс `BeanDefinitionReader`. Тут все достаточно прозрачно. `XmlBeanDefinitionReader` получает InputStream и загружает Document через `DefaultDocumentLoader`. Далее обрабатывается каждый элемент документа и если он является бином, то создается `BeanDefinition` на основе заполненных данных (id, name, class, alias, init-method, destroy-method и др.). Каждый `BeanDefinition` помещается в Map. Map хранится в классе `DefaultListableBeanFactory`.
++ __XML конфигурация__ — `ClassPathXmlApplicationContext(“context.xml”)`. Используется класс — `XmlBeanDefinitionReader`, который реализует интерфейс `BeanDefinitionReader`. Тут все достаточно прозрачно. `XmlBeanDefinitionReader` получает InputStream и загружает Document через `DefaultDocumentLoader`. Далее обрабатывается каждый элемент документа и если он является бином, то создается `BeanDefinition` на основе заполненных данных (id, name, class, alias, init-method, destroy-method и др.). Каждый `BeanDefinition` помещается в Mindmap. Mindmap хранится в классе `DefaultListableBeanFactory`.
 
 + __Аннотация/JavaConfig__ — с указанием пакета для сканирования — `AnnotationConfigApplicationContext(“package.name”)` или  через аннотации с указанием класса (или массива классов) помеченного аннотацией `@Configuration` - `AnnotationConfigApplicationContext(JavaConfig.class)`. Внутри `AnnotationConfigApplicationContext`, то можно увидеть два поля.
 
