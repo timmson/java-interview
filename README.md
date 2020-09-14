@@ -241,7 +241,7 @@
 + [В чем разница между классами `java.util.Collection` и `java.util.Collections`?](005-jcf.md#в-чем-разница-между-классами-javautilcollection-и-javautilcollections)
 + [Что такое «fail-fast поведение»?](005-jcf.md#что-такое-fail-fast-поведение)
 + [Какая разница между fail-fast и fail-safe?](005-jcf.md#какая-разница-между-fail-fast-и-fail-safe)
-+ [Приведите примеры итераторов реализующих поведение fail-safe](005-jcf.md#приведите-примеры-итераторов-реализующих-поведение-fail-safe)
++ [Приведите примеры итераторов, реализующих поведение fail-safe](005-jcf.md#приведите-примеры-итераторов-реализующих-поведение-fail-safe)
 + [Чем различаются `Enumeration` и `Iterator`.](005-jcf.md#чем-различаются-enumeration-и-iterator)
 + [Как между собой связаны `Iterable` и `Iterator`?](005-jcf.md#как-между-собой-связаны-iterable-и-iterator)
 + [Как между собой связаны `Iterable`, `Iterator` и «for-each»?](005-jcf.md#как-между-собой-связаны-iterable-iterator-и-for-each)

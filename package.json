@@ -8,7 +8,6 @@
     "test": "npx mocha",
     "coverage": "npx nyc mocha && npx nyc report --reporter=text-lcov > coverage.lcov",
     "generate": "node index.js",
-    "spell": "npx yaspeller -l ru ./",
     "start": "npm run generate && cd ./quiz && npm run prod && cd ../mindmap && npm run prod"
   },
   "repository": {
@@ -31,6 +30,6 @@
   "dependencies": {
     "colors": "1.4.0",
     "showdown": "1.9.1",
-    "yaspeller": "6.0.3"
+    "yaspeller": "7.0.0"
   }
 }
