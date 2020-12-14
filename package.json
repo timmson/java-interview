@@ -8,7 +8,7 @@
     "test": "npx mocha",
     "coverage": "npx nyc mocha && npx nyc report --reporter=text-lcov > coverage.lcov",
     "generate": "node index.js",
-    "start": "npm run generate && cd ./quiz && npm run prod && cd ../mindmap && npm run prod"
+    "prod": "npm run generate && cd ./quiz && npm run prod && cd ../mindmap && npm run prod"
   },
   "repository": {
     "type": "git",
