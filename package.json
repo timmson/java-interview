@@ -8,8 +8,8 @@
     "lint": "npx eslint ./lib ./test index.js ./mindmap/src ./quiz/src --fix",
     "test": "npx jest",
     "coverage": "npx jest --collectCoverage",
-    "generate": "node index.js",
-    "prod": "npm run generate"
+    "mdlint": "npx markdownlint-cli ./*.md --fix",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

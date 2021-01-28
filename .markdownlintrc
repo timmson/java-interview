@@ -1,0 +1,10 @@
+{
+    "default": true,
+    "line-length": false,
+    "no-inline-html": false,
+    "no-emphasis-as-heading": false,
+    "no-multiple-blanks": false,
+    "no-trailing-punctuation": {
+        "punctuation": "."
+    }
+}

@@ -1,10 +1,13 @@
 ## Интеллект-карта
-[![mindmap](./img/mindmap.png)](./mindmap)
+
+[![_](./img/mindmap.png)](./mindmap)
 
 ## Пройти опрос
-[![mindmap](./img/quiz.png)](./quiz)
+
+[![_](./img/quiz.png)](./quiz)
 
 ## Оглавление
+
 + [Объектно-ориентированное программирование](001-oop.md)
 + [Проектирование ПО](002-sd.md)
 + [Java Virtual Machine](003-jvm.md)

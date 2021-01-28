@@ -1,10 +1,13 @@
 ## Интеллект-карта
-[![mindmap](./img/mindmap.png)](./mindmap)
+
+[![_](./img/mindmap.png)](./mindmap)
 
 ## Пройти опрос
-[![mindmap](./img/quiz.png)](./quiz)
+
+[![_](./img/quiz.png)](./quiz)
 
 ## Оглавление
+
 {{#articles}}
 {{{.}}}
 {{/articles}}
