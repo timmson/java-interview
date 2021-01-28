@@ -1,6 +1,4 @@
 const Logger = require("../lib/logger");
-const {expect} = require("chai");
-require("mocha");
 
 function mockLog() {
 
@@ -10,24 +8,24 @@ describe("Logger should", () => {
 
 	const logger = new Logger(mockLog);
 
-	it("print info", async () => {
+	test("print info", async () => {
 		logger.info("");
-		expect(true).is.equal(true);
+		expect(true).toBeTruthy();
 	});
 
-	it("print info file", async () => {
+	test("print info file", async () => {
 		logger.infoFile("", "");
-		expect(true).is.equal(true);
+		expect(true).toBeTruthy();
 	});
 
-	it("print error", async () => {
+	test("print error", async () => {
 		logger.error("");
-		expect(true).is.equal(true);
+		expect(true).toBeTruthy();
 	});
 
-	it("print error file", async () => {
+	test("print error file", async () => {
 		logger.errorFile({errors: []});
-		expect(true).is.equal(true);
+		expect(true).toBeTruthy();
 	});
 
 });

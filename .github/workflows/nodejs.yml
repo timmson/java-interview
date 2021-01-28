@@ -1,0 +1,57 @@
+on: [ push ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 12.x ]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Test & Generate
+        run: |
+          npm i
+          npm run lint
+          npm test
+          npm generate
+        env:
+          CI: true
+
+  && cd ./quiz && npm run prod && cd ../mindmap && npm run prod
+
+  - name: Quiz Test & Generate
+    run: |
+      cd ./quiz
+      npm i
+      npm run prod
+    env:
+      CI: true
+
+  - name: Mindmad Test & Generate
+    run: |
+      cd ./mindmap
+      npm i
+      npm run prod
+    env:
+      CI: true
+
+  - name: Commit files
+    run: |
+      git config --local user.email "java-interview[bot]@users.noreply.github.com"
+      git config --local user.name "java-interview[bot]"
+      git add -A
+      git diff-index --quiet HEAD || git commit -m "Generate index"
+
+  - name: Push changes
+    uses: ad-m/github-push-action@master
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      branch: ${{ github.ref }}
