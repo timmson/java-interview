@@ -26,13 +26,13 @@ new Vue({
 		},
 	},
 	methods: {
-		goToContents: function (event) {
+		goToContents: function () {
 			window.location.href = root;
 		},
-		openAnswer: function (event) {
+		openAnswer: function () {
 			this.isAnswerOpen = !this.isAnswerOpen;
 		},
-		loadQuestion: function (event) {
+		loadQuestion: function () {
 			this.isAnswerOpen = false;
 			let q = question.getQuestion(this.defaultQuestion) || {
 				url: "",

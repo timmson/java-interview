@@ -1,14 +1,12 @@
 const Speller = require("../lib/speller");
-const {expect} = require("chai");
-require("mocha");
 
 describe("Speller should", () => {
-	it("2 errors on given string", async () => {
+	test("2 errors on given string", async () => {
 		const arrange = "Потомучта Сплитератором ее";
 
 		class YaSpellerMock {
 
-			static checkText(text, callback, settings) {
+			static checkText(text, callback) {
 				callback(null, [{word: "Потомучта"}, {word: "ее"}]);
 			}
 
@@ -20,17 +18,17 @@ describe("Speller should", () => {
 			"dictionary": ["сплитератор.*"]
 		}, YaSpellerMock).check(arrange);
 
-		expect(result).has.length(2);
-		expect(result[0].word).is.equal("Потомучта");
-		expect(result[1].word).is.equal("ее");
+		expect(result).toHaveLength(2);
+		expect(result[0].word).toEqual("Потомучта");
+		expect(result[1].word).toEqual("ее");
 	});
 
-	it("throw error when API returned an error", async () => {
+	test("throw error when API returned an error", async () => {
 		const arrange = "";
 
 		class YaSpellerMock {
 
-			static checkText(text, callback, settings) {
+			static checkText(text, callback) {
 				callback("Something went wrong", null);
 			}
 
@@ -38,8 +36,8 @@ describe("Speller should", () => {
 
 		const result = await new Speller({}, YaSpellerMock).check(arrange);
 
-		expect(result).has.length(1);
-		expect(result[0]).is.equal("Something went wrong");
+		expect(result).toHaveLength(1);
+		expect(result[0]).toEqual("Something went wrong");
 	});
 
 });

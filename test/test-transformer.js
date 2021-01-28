@@ -1,8 +1,6 @@
 const trueFs = require("fs");
 const Logger = require("../lib/logger");
 const Transformer = require("../lib/transformer");
-const {expect} = require("chai");
-require("mocha");
 
 class MockFS {
 
@@ -54,20 +52,20 @@ describe("Transformer should", () => {
 	const pr = new MockPR();
 	const transformer = new Transformer(fs, pr, new Logger(mockLog));
 
-	it("transform root file", () => {
+	test("transform root file", () => {
 		transformer.transformRootFile("some file", [{fileName: "myfile", questions: [{}]}]);
-		expect(true).is.equal(true);
-	})
+		expect(true).toBeTruthy();
+	});
 
-	it("transform file", () => {
+	test("transform file", () => {
 		transformer.transform("some file", []);
-		expect(true).is.equal(true);
-	})
+		expect(true).toBeTruthy();
+	});
 
-	it("persist structure", () => {
+	test("persist structure", () => {
 		transformer.persistStructure("some file", [{fileName: "myfile", questions: [{}]}]);
-		expect(true).is.equal(true);
-	})
+		expect(true).toBeTruthy();
+	});
 
 });
 

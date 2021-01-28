@@ -1,6 +1,4 @@
 const Question = require("../lib/question");
-const {expect} = require("chai");
-require("mocha");
 
 describe("Question should", () => {
 
@@ -24,22 +22,22 @@ describe("Question should", () => {
 
 	const question = new Question(questions);
 
-	it("return random question", () => {
+	test("return random question", () => {
 		const result = question.getQuestion();
 
-		expect(result).is.not.undefined;
+		expect(result).not.toBeUndefined();
 	});
 
-	it("return question by url", () => {
+	test("return question by url", () => {
 		const result = question.getQuestion("001-oop.html##что-такое-наследование");
 
-		expect(result).to.have.deep.equal(questions[1]);
+		expect(result).toEqual(questions[1]);
 	});
 
-	it("return undefined by missing url", () => {
+	test("return undefined by missing url", () => {
 		const result = question.getQuestion("some missing url");
 
-		expect(result).to.be.undefined;
+		expect(result).toBeUndefined();
 	});
 
 });

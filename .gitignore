@@ -1,6 +1,4 @@
 *.iml
 .idea/
-
+coverage
 node_modules/
-coverage.lcov
-.nyc_output

@@ -1,0 +1,12 @@
+## Интеллект-карта
+[![mindmap](./img/mindmap.png)](./mindmap)
+
+## Пройти опрос
+[![mindmap](./img/quiz.png)](./quiz)
+
+## Оглавление
+{{#articles}}
+{{{.}}}
+{{/articles}}
+
+Проект основан на [enhorse/java-interview](https://github.com/enhorse/java-interview).

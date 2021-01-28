@@ -36,4 +36,4 @@
 + [Основы CSS](052-css.md)
 + [Основы Javascript](053-javascript.md)
 
-Проект основан на [enhorse/java-interview](https://github.com/enhorse/java-interview)
+Проект основан на [enhorse/java-interview](https://github.com/enhorse/java-interview).
