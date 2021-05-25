@@ -18,11 +18,11 @@
     "url": "https://github.com/timmson/java-interview/issues"
   },
   "dependencies": {
-    "axios": "0.21.1",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.2",
