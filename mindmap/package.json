@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "gojs": "^2.1.40",
+    "gojs": "^2.1.17",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "vue": "^2.6.12"
