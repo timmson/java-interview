@@ -14,7 +14,7 @@ Promise.all(mdFilesContents.reduce((accumulator, current) => accumulator.concat(
 
 	if (errorResults.length > 0) {
 		errorResults.forEach(v => logger.errorFile(v));
-		process.extest(1);
+		process.exit(1);
 	}
 
 	transformer.transformRootFile(__dirname + "/" + "README.md", mdFilesContents);
