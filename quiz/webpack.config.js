@@ -1,5 +1,5 @@
 const path = require("path");
-require("babel-polyfill");
+//require("babel-polyfill");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -41,5 +41,12 @@ module.exports = {
 			filename: "index.css"
 		})
 
-	]
+	],
+	devServer: {
+		static: {
+			directory: path.join(__dirname, "."),
+		},
+		compress: true,
+		port: 3000
+	}
 };
