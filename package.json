@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "showdown": "^1.9.1",
+    "showdown": "^2.0.3",
     "yaspeller": "^7.2.1"
   }
 }
