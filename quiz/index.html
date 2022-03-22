@@ -7,15 +7,23 @@
     <meta content="" name="description">
     <meta content="" name="author">
 
-    <title>Вопросы для собеседования на разработчика Java</title>
+    <title>Вопросы для интервью Java-разработчика</title>
 
-    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json"/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Java Dev Q&A"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://timmson.github.io/java-interview/quiz/" />
+    <meta property="og:description" content="Вопросы для интервью Java-разработчика"/>
+    <meta property="og:image" content="https://timmson.github.io/java-interview/quiz/favicon-144x144.png"/>
 </head>
 <body>
 <div class="container" id="app">
     <div class="row">
         <div class="col-sm-12 text-center">
-            <h2 class="text-center">Вопросы для собеседования на разработчика Java</h2>
+            <h2 class="text-center">Вопросы для интервью Java-разработчика</h2>
         </div>
     </div>
     <div class="row mt-2">
@@ -45,4 +53,15 @@
     </div>
 </div>
 <script src="index.js"></script>
+<script type="application/javascript">
+	window.addEventListener("load", async () => {
+		if ("serviceWorker" in navigator) {
+			try {
+				await navigator.serviceWorker.register("sw.js");
+			} catch (e) {
+				console.log("Service worker register fail");
+			}
+		}
+	});
+</script>
 </body>

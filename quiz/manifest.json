@@ -1,0 +1,15 @@
+{
+  "name": "Вопросы для интервью Java-разработчика",
+  "short_name": "Java Dev Q&A",
+  "theme_color": "#2b2b2b",
+  "background_color": "#2b2b2b",
+  "display": "standalone",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "favicon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ]
+}
