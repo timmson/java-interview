@@ -30,6 +30,6 @@
   "dependencies": {
     "colors": "^1.4.0",
     "showdown": "^2.0.3",
-    "yaspeller": "^7.2.1"
+    "yaspeller": "^8.0.1"
   }
 }
