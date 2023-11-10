@@ -19,7 +19,7 @@
     "url": "https://github.com/timmson/java-interview/issues"
   },
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^1.6.0",
     "bootstrap": "^4.6.1",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
