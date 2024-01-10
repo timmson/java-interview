@@ -1,23 +1,21 @@
-import "bootstrap";
 import "./index.scss";
 
-import GoJs from "gojs";
-import Vue from "vue";
+import go from "gojs";
 
 import MindMap from "../../lib/mindmap";
 import questions from "../../lib/questions";
 
 const mindMap = new MindMap(questions);
 
-const goJs = GoJs.GraphObject.make;
+const $ = go.GraphObject.make;
 
-let nodeTemplate = goJs(GoJs.Node, "Auto", {
-	locationSpot: GoJs.Spot.Center
+let nodeTemplate = $(go.Node, "Auto", {
+	locationSpot: go.Spot.Center
 },
 
-goJs(GoJs.Shape, "RoundedRectangle",
+$(go.Shape, "RoundedRectangle",
 	{
-		fill: "white",
+		//fill: "white",
 		portId: "",
 		cursor: "pointer",
 		fromLinkable: true,
@@ -27,52 +25,35 @@ goJs(GoJs.Shape, "RoundedRectangle",
 		toLinkableSelfNode: true,
 		toLinkableDuplicates: true
 	},
-	new GoJs.Binding("fill", "color")
+	new go.Binding("fill", "color")
 ),
 
-goJs(GoJs.TextBlock,
+$(go.TextBlock,
 	{
 		font: "bold 14px Lucida Console",
 		cursor: "pointer",
 		stroke: "#333",
-		margin: 6,  // make some extra space for the shape around the text
-		isMultiline: false,  // don't allow newlines in text
-		editable: false  // allow in-place editing by user
+		margin: 6,
+		isMultiline: false,
+		editable: false
 	},
-	new GoJs.Binding("text", "text").makeTwoWay()
+	new go.Binding("text", "text").makeTwoWay()
 )
 );
 
 
-Vue.component("diagram", {
-	template: "<div class=\"diagram\"></div>",
-	//props:,
-	mounted() {
-		const myDiagram = goJs(GoJs.Diagram, this.$el, {
-			layout: goJs(GoJs.ForceDirectedLayout)
-		});
-		myDiagram.addDiagramListener("ObjectSingleClicked",
-			function (e) {
-				if (e.subject.part.ib.link !== undefined) {
-					//console.log(e.subject.part.ib.link);
-					window.open(e.subject.part.ib.link);
-				}
-			});
-		const map = mindMap.getMap();
-		myDiagram.model = new GoJs.GraphLinksModel(map.nodes, map.links);
-		myDiagram.nodeTemplate = nodeTemplate;
-		//myDiagram.isEnabled = false;
-	}
+const myDiagram = $(go.Diagram, "diagram", {
+	layout: $(go.ForceDirectedLayout)
 });
 
+// myDiagram.addDiagramListener("ObjectSingleClicked",
+// 	function (e) {
+// 		//console.log(e);
+// 	});
 
-new Vue({
-	el: "#app",
-	data: {
-		currentYear: new Date().getFullYear().toString(),
-		modelData: {}
-	},
-	mounted() {
+const map = mindMap.getMap();
+myDiagram.model = new go.GraphLinksModel(map.nodes, map.links);
+myDiagram.nodeTemplate = nodeTemplate;
+//myDiagram.isEnabled = false;
 
-	}
-});
+document.getElementById("currentYear").innerText = new Date().getFullYear().toString();

@@ -1,6 +1,6 @@
 {
   "name": "java-interview",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Q&A for Java Developer Interview",
   "main": "index.js",
   "private": true,
