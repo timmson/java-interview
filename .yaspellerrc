@@ -13,6 +13,10 @@
   "ignoreCapitalization": true,
   "ignoreText": [],
   "dictionary": [
+    "HTML 5",
+    "DOM",
+    "XSD",
+    "Model",
     "aaa",
     "автоупаковк.*",
     "антипаттерн.*",
