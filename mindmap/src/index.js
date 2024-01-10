@@ -1,21 +1,21 @@
 import "./index.scss";
 
-import GoJs from "gojs";
+import go from "gojs";
 
 import MindMap from "../../lib/mindmap";
 import questions from "../../lib/questions";
 
 const mindMap = new MindMap(questions);
 
-const $ = GoJs.GraphObject.make;
+const $ = go.GraphObject.make;
 
-let nodeTemplate = $(GoJs.Node, "Auto", {
-	locationSpot: GoJs.Spot.Center
+let nodeTemplate = $(go.Node, "Auto", {
+	locationSpot: go.Spot.Center
 },
 
-$(GoJs.Shape, "RoundedRectangle",
+$(go.Shape, "RoundedRectangle",
 	{
-		fill: "white",
+		//fill: "white",
 		portId: "",
 		cursor: "pointer",
 		fromLinkable: true,
@@ -25,10 +25,10 @@ $(GoJs.Shape, "RoundedRectangle",
 		toLinkableSelfNode: true,
 		toLinkableDuplicates: true
 	},
-	new GoJs.Binding("fill", "color")
+	new go.Binding("fill", "color")
 ),
 
-$(GoJs.TextBlock,
+$(go.TextBlock,
 	{
 		font: "bold 14px Lucida Console",
 		cursor: "pointer",
@@ -37,22 +37,22 @@ $(GoJs.TextBlock,
 		isMultiline: false,
 		editable: false
 	},
-	new GoJs.Binding("text", "text").makeTwoWay()
+	new go.Binding("text", "text").makeTwoWay()
 )
 );
 
 
-const myDiagram = $(GoJs.Diagram, "diagram", {
-	layout: $(GoJs.ForceDirectedLayout)
+const myDiagram = $(go.Diagram, "diagram", {
+	layout: $(go.ForceDirectedLayout)
 });
 
-myDiagram.addDiagramListener("ObjectSingleClicked",
-	function (e) {
-		console.log(e);
-	});
+// myDiagram.addDiagramListener("ObjectSingleClicked",
+// 	function (e) {
+// 		//console.log(e);
+// 	});
 
 const map = mindMap.getMap();
-myDiagram.model = new GoJs.GraphLinksModel(map.nodes, map.links);
+myDiagram.model = new go.GraphLinksModel(map.nodes, map.links);
 myDiagram.nodeTemplate = nodeTemplate;
 //myDiagram.isEnabled = false;
 
