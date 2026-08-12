@@ -10,18 +10,18 @@ const params = new URL(window.location.href).searchParams;
 const root = "../";
 
 createApp({
-    data() {
-        return {
-            currentYear: new Date().getFullYear().toString(),
-            isAnswerOpen: false,
-            defaultQuestion: params.get("question"),
-            question: {
-                subject: "",
-                url: "",
-                title: "",
-                answer: ""
-            },
-        };
+	data() {
+		return {
+			currentYear: new Date().getFullYear().toString(),
+			isAnswerOpen: false,
+			defaultQuestion: params.get("question"),
+			question: {
+				subject: "",
+				url: "",
+				title: "",
+				answer: ""
+			},
+		};
 	},
 	methods: {
 		goToContents: function () {
