@@ -39,5 +39,6 @@
 + [Основы HTML](062-html.md)
 + [Основы CSS](063-css.md)
 + [Основы Javascript](064-javascript.md)
++ [KODA.md — Контекст проекта java-interview](KODA.md)
 
 Проект основан на [enhorse/java-interview](https://github.com/enhorse/java-interview).
