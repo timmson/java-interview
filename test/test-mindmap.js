@@ -9,9 +9,9 @@ describe("Map should", () => {
 
 		const map = mindMap.getMap();
 
-		expect(map.nodes).toHaveLength(30);
+		expect(map.nodes).toHaveLength(31);
 
-		expect(map.links).toHaveLength(29);
+		expect(map.links).toHaveLength(30);
 	});
 
 });
