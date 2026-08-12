@@ -1,7 +1,7 @@
 import "bootstrap";
 import "./index.scss";
 import Question from "../../lib/question";
-import Vue from "vue";
+import {createApp} from "vue";
 
 const question = new Question();
 
@@ -9,18 +9,19 @@ const params = new URL(window.location.href).searchParams;
 
 const root = "../";
 
-new Vue({
-	el: "#app",
-	data: {
-		currentYear: new Date().getFullYear().toString(),
-		isAnswerOpen: false,
-		defaultQuestion: params.get("question"),
-		question: {
-			subject: "",
-			url: "",
-			title: "",
-			answer: ""
-		},
+createApp({
+    data() {
+        return {
+            currentYear: new Date().getFullYear().toString(),
+            isAnswerOpen: false,
+            defaultQuestion: params.get("question"),
+            question: {
+                subject: "",
+                url: "",
+                title: "",
+                answer: ""
+            },
+        };
 	},
 	methods: {
 		goToContents: function () {
@@ -49,4 +50,4 @@ new Vue({
 	mounted() {
 		this.loadQuestion(null);
 	}
-});
+}).mount("#app");
